@@ -4,12 +4,15 @@ import pandas as pd
 # series = pd.Series(data)
 # print(series)
 #
-# #датафрейм
-# data_f = {
-#     "name" : ['Alice', 'Bob', 'Roma', 'Anna'],
-#     "age" : [23, 45, 17, 24],
-#     "city" : ['New York', 'LA', 'Chicago', 'Moscow']
-# }
+#датафрейм
+data_f = {
+    "name" : ['Alice', 'Bob', 'Roma', 'Anna'],
+    "age" : [23, 45, 17, 24],
+    "city" : ['New York', 'LA', 'Chicago', 'Moscow']
+}
+df = pd.DataFrame(data_f)
+#сохранение в файл
+df.to_csv('output.csv', index=False)
 #
 # df = pd.DataFrame(data_f)
 # print(df)
@@ -40,18 +43,17 @@ import pandas as pd
 #вывод по условию
 #print(df[df['Healthy life expectancy'] > 0.7])
 
-df = pd.read_csv('hh.csv')
-
-df['Test'] = [new for new in range(7)]
-
-print(df)
+# df = pd.read_csv('hh.csv')
+#
+# df['Test'] = [new for new in range(7)]#
+# print(df)
 
 # удаление столбка axis=1 или строки axis=0; inplace нужен, чтобы показывать, что изменения,
 # которые мы вносим, должны быть внесены в исходный датафрейм
 # — в этом случае для этого параметра прописывается значение True.
 # В случае, если значение этого параметра False, оригинальный датафрейм останется неизменным
-df.drop('Test', axis=1, inplace=True)
-print(df)
-
-df.drop([0], axis=0, inplace=True)
-print(df)
+# df.drop('Test', axis=1, inplace=True)
+# print(df)
+#
+# df.drop([0], axis=0, inplace=True)
+# print(df)
